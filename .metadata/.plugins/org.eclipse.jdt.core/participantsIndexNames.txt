@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+/Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4032067602.index
+/Day1/src
+/Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1019485560.index
+/Day1/src
