@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Request Form Test - Front</title>
+</head>
+<body>
+	<h1>request Form Test</h1>
+	<hr>
+	<form id="formList" action="request_result.jsp" method="get">
+		<table>
+			<tr>
+				<td>이름</td>
+				<td><input name="name" type="text" required="required"></td>
+			</tr>
+			<tr>
+				<td>희망 직업</td>
+				<td>
+					<select name="job" size="1">
+						<option value="frontend" selected="selected">프론트엔드 개발</option>
+						<option value="backend">백엔드 개발</option>
+						<option value="devops">DevOps</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					보유 기술
+				</td>
+				<td>
+					JAVA<input name="skill" type="checkbox" value="JAVA">
+					HTML5<input name="skill" type="checkbox" value="HTML5">
+					CSS3<input name="skill" type="checkbox" value="CSS3">
+					JavaScript<input name="skill" type="checkbox" value="JS">
+					JSP<input name="skill" type="checkbox" value="JSP">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="전송하기">
+					<input type="button" value="초기화" onclick="valReset()">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+<script type="text/javascript">
+	function valReset() {
+		document.getElementById('formList').reset();
+	}
+</script>
+</html>
