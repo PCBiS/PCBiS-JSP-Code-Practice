@@ -17,17 +17,18 @@ public class DBCPInit extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-
 		loadJdbcDriver();		// 데이터베이스 드라이버 로드
 		initConnectionPool();	// Pool 드라이버 로드(설정)
-
 	}
 
 	private void loadJdbcDriver() {
 		try {
 			// 커넥션 풀이 내부에서 사용할 jdbc 드라이버를 로딩함.
-			// Class.forName("com.mysql.jdbc.Driver");
+			// Class는 Class의 정보(필드, 메소드, 종류(인터페이스))를 담는 메타 클래스.
+			// JVM은 이 Class를 통하여 입력받은 클래스 x의 정보를 로드하는 구조임.
+			// .forName은 x라는 이름의 클래스 or 인터페이스를 초기화 해줌.
 			Class.forName("oracle.jdbc.driver.OracleDriver");
+			// Class.forName("com.mysql.jdbc.Driver"); <- mySql을 사용 할 때.
 			System.out.println("Oracle 데이터베이스 드라이버 로드 성공...!!!!");
 		} catch (ClassNotFoundException ex) {
 			throw new RuntimeException("fail to load JDBC Driver", ex);
@@ -38,10 +39,11 @@ public class DBCPInit extends HttpServlet {
 		
 		try {
 			
-			String jdbcDriver = "jdbc:oracle:thin:@localhost:1521:orcl";
+			//String jdbcDriver = "jdbc:oracle:thin:@localhost:1521:orcl";
 			//String jdbcDriver = "jdbc:mysql://localhost:3306/project?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC";
+			String jdbcDriver = "jdbc:oracle:thin:@ksla.iptime.org:31521:orcl";
 			String username = "scott";
-			String pw = "tiger";
+			String pw = "SeconD*1203";
 			
 			
 			//커넥션풀이 새로운 커넥션을 생성할 때 사용할 커넥션팩토리를 생성.
@@ -60,7 +62,6 @@ public class DBCPInit extends HttpServlet {
 			poolConfig.setTimeBetweenEvictionRunsMillis(1000L * 60L * 5L);
 			//풀에 보관중인 커넥션이 유효한지 검사할지 유무 설정
 			poolConfig.setTestWhileIdle(true);
-			
 			//커넥션 최소 개수
 			poolConfig.setMinIdle(4);
 			//커넥션 최대 개수
@@ -75,14 +76,9 @@ public class DBCPInit extends HttpServlet {
 			Class.forName("org.apache.commons.dbcp2.PoolingDriver");
 			PoolingDriver driver = (PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
 			
-			
-			
 			// 위에서 커넥션 풀 드라이버에 생성한 커넥션 풀을 등록한다. 
 			// 이름은 pool 이다.
 			driver.registerPool("pool", connectionPool);
-			
-			//jdbc:apache:commons:dbcp:pool
-			
 			
 			System.out.println("컨넥션 풀 등록 !!!!!");
 			

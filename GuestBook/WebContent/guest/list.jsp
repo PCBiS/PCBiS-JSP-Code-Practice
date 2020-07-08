@@ -6,13 +6,19 @@
 <meta charset="UTF-8">
 <title>글 쓰기</title>
 <style type="text/css">
-
+	table td {
+		padding:10px;
+	}
+	
+	input, textarea {
+		padding : 5px;
+	}
 </style>
 </head>
 <body>
 	<h3>방명록 글 쓰기</h3>
 	<hr>
-	<form action="messageWrite.jsp" method="post">
+	<form action="./messageWrite.jsp" method="post">
 		<table>
 			<tr>
 				<td><label for="uname">이름</label></td>
