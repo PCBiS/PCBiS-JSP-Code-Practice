@@ -24,19 +24,6 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
   	<servlet-class>test.NowServlet</servlet-class>
   </servlet>
   
-  <!-- DB드라이버 로드 -->
-  <servlet>
-  	<servlet-name>Loader</servlet-name>
-  	<servlet-class>jdbc.Loader</servlet-class>
-  	<init-param>
-  		<param-name>jdbcDriver</param-name>
-  		<!-- StringTokenizer로 드라이버를 여러개 불러올때는 띄워쓰기 조심. -->
-  		<param-value>oracle.jdbc.driver.OracleDriver,com.mysql.jdbc.Driver</param-value>
-  	</init-param>
-  	<!-- 톰캣이 구동 될 때 한번 Loader를 한번 실행해준다. -->
-  	<load-on-startup>1</load-on-startup>
-  </servlet>
-  
   <!-- 경로 멥핑 -->
   <servlet-mapping>
   	<!-- 요청에 샐행 할 서블릿 이름 등록 -->
@@ -44,6 +31,32 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
   	<!-- http://localhost:8080/web/hello -->
   	<url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  
+  
+  <!-- 데이터베이스 드라이버 로드  -->
+<!--   <servlet>
+  	<servlet-name>Loader</servlet-name>
+  	<servlet-class>jdbc.Loader</servlet-class>
+  	<init-param>
+  		<param-name>jdbcDriver</param-name>
+  		<param-value>oracle.jdbc.driver.OracleDriver,com.mysql.jdbc.Driver</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>msg</param-name>
+  		<param-value>Hello~ JSP~~</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet> -->
+  
+  <!-- 컨텍션 풀 드라이버 등록 -->
+  <servlet>
+  	<servlet-name>DBCPInit</servlet-name>
+  	<servlet-class>jdbc.DBCPInit</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  
+  
   
   
   
@@ -64,6 +77,23 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/
   	<exception-type>java.lang.NullPointerException</exception-type>
   	<location>/error/error_null.jsp</location>
   </error-page>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </web-app>
 
 
