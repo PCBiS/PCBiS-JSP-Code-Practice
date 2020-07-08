@@ -3,6 +3,8 @@ INDEX VERSION 1.131
 /OpenProject/src
 /Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2315934947.index
 /Day01/src
+/Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/303138949.index
+/FirstWeb/src
 /Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4220544064.index
 /Day04/src
 /Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/708206407.index

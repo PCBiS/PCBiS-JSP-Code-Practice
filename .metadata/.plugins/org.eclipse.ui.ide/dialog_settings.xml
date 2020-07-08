@@ -68,6 +68,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice/FirstWeb"/>
+			<item value="/Users/ksla/Documents/Github/PCBiS-JSP-Code-Practice"/>
 			<item value="/Users/ksla/Downloads/aiajr202003-master/jsp_project/OpenProject"/>
 		</list>
 	</section>
